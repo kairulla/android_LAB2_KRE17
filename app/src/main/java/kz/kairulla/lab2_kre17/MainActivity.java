@@ -1,4 +1,4 @@
-package kz.kairulla.lab1_kre17;
+package kz.kairulla.lab2_kre17;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,13 +20,29 @@ public class MainActivity extends AppCompatActivity {
         editTextB = (EditText) findViewById(R.id.editTextB);
         editTextX = (EditText) findViewById(R.id.editTextX);
         textViewOtvet = (TextView) findViewById(R.id.textViewOtvet);
+
+        if (savedInstanceState != null) {
+            editTextA.setText(savedInstanceState.getString("A"));
+            editTextB.setText(savedInstanceState.getString("B"));
+            editTextX.setText(savedInstanceState.getString("X"));
+            textViewOtvet.setText(savedInstanceState.getString("Otvet"));
+        }
+    }
+
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString("A", editTextA.getText().toString());
+        outState.putString("B", editTextB.getText().toString());
+        outState.putString("X", editTextX.getText().toString());
+        outState.putString("Otvet", textViewOtvet.getText().toString());
     }
 
     public void onClickButtonSolver(View view) {
         double a = 0, b = 0, x = 0, y = 0;
-        String[] editTextEmptyTest = new String[] {
-                editTextA.getText().toString(), editTextB.getText().toString(), editTextX.getText().toString()
-        };
+//        String[] editTextEmptyTest = new String[] {
+//                editTextA.getText().toString(), editTextB.getText().toString(), editTextX.getText().toString()
+//        };
 
         /*for (int i = 0; i < 3; i++) {
             if (TextUtils.isEmpty(editTextEmptyTest[i])) {
