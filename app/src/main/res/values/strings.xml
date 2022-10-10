@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LAB1_KRE17</string>
+    <string name="app_name">LAB2_KRE17</string>
     <string name="buttonSolver">РЕШИТЬ</string>string>
     <string name="buttonClear">ОЧИСТИТЬ</string>string>
     <string name="textViewOtvet">ОТВЕТ:</string>
